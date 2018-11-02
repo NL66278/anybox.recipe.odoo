@@ -2,7 +2,7 @@ import os
 import sys
 from setuptools import setup, find_packages
 
-version = '1.9.3'
+version = '1.9.3.dev1'
 
 if sys.version_info < (2, 6):
     sys.stderr.write("This package requires Python 2.6 or newer. "
@@ -11,7 +11,9 @@ if sys.version_info < (2, 6):
 
 # a sufficient version of pip is needed to parse Odoo requirement file
 # version 1.4.1 is the one required by reportlab anyway
-requires = ['setuptools', 'zc.recipe.egg', 'zc.buildout>=2.2.0', 'pip>=1.4.1']
+requires = [
+    'setuptools', 'zc.recipe.egg',
+    'zc.buildout==2.12.3.dev1', 'pip>=1.4.1']
 
 if sys.version_info < (2, 7):
     requires.append('ordereddict')
